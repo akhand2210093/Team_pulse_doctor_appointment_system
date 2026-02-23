@@ -1,0 +1,76 @@
+Based on the images provided, here is the complete extraction of the **Doctor Appointment System — Use Case** text.
+
+---
+
+## **Doctor Appointment System — Use Case**
+
+**Online & Offline Modes | Different Doctors per Mode | Python + MySQL (No Code)**
+
+### **Problem Statement**
+
+* Enable patients to browse specialties and doctors, view availability, and book appointments in Online (teleconsultation) or Offline (in-clinic) mode.
+* **Strict rule:** Online and Offline appointments must use different doctors.
+* Provide status updates and daily summaries (appointments and revenue by mode/specialty).
+
+---
+
+### **Entities**
+
+* **Specialty** (name)
+* **Doctor** (name, specialty, mode: online/offline, fee, active)
+* **Patient** (name, contact, DOB, email)
+* **DoctorSchedule** (doctor, date, time slot, booked flag)
+* **Appointment** (patient, doctor, mode, date/time, status, fee, video link/clinic address)
+
+---
+
+### **Specialties (Examples)**
+
+* General Physician, Pediatrics, Dermatology, Gynecology, Orthopedics, Cardiology, Neurology
+* Ophthalmology, ENT, Psychiatry, Psychology, Gastroenterology, Nephrology, Urology
+* Pulmonology, Endocrinology, Oncology, Rheumatology, Dentistry, Physiotherapy, Nutrition
+* Homeopathy, Ayurveda, General Surgery, Plastic Surgery, Vascular Surgery, Spine, Diabetology, Pain Management
+
+---
+
+### **Business Rules**
+
+* **Different doctor per mode:** Online appointments use Online doctors; Offline appointments use Offline doctors.
+* **Slot locking** prevents double booking.
+* **Artifacts:** Online provides a video link; Offline provides clinic address and instructions.
+* **Status lifecycle:** confirmed  completed | cancelled | no-show.
+
+---
+
+### **Primary User Journeys**
+
+* Browse specialties and filter doctors by mode.
+* Select doctor and slot; confirm appointment.
+* Receive confirmation with mode-specific details.
+* Mark appointment completed/cancelled/no-show.
+* Generate daily summaries by mode and specialty.
+
+---
+
+### **Acceptance Criteria**
+
+* Only Online doctors appear for Online bookings; video link included.
+* Only Offline doctors appear for Offline bookings; clinic address included.
+* Mode-doctor mismatch is rejected.
+* Double booking prevention.
+* Daily summary returns correct counts and revenue.
+
+---
+
+### **Non-Functional Considerations**
+
+* **Reliability:** transactional booking.
+* **Performance:** fast listing of doctors & slots.
+* **Security & Privacy:** protect patient data.
+* **Auditability:** track appointment lifecycle.
+
+---
+
+**Current Timestamp:** 2026-02-23 13:54:15 IST
+
+Would you like me to design the MySQL schema or write the Python logic to implement these business rules?
